@@ -31,15 +31,16 @@ function ShowTodo({ todos, setTodos }) {
   if (todos.length === 0) return null;
 
   return (
-    <div className="w-full text-center flex items-center flex-col gap-5">
-      <h1 className="text-blue-600 uppercase font-semibold text-2xl">
+    <div className="w-full text-center flex items-center flex-col">
+      <h1 className="text-blue-600 uppercase font-semibold text-2xl pt-20 pb-5">
         Task List
       </h1>
       <div className="w-1/2 bg-slate-300 backdrop-blur-lg px-3 py-5 rounded-md">
         {todos.map((todo) => (
           <div className="flex justify-between items-center mb-5" key={todo.id}>
-            <li className="list-none w-2/3 text-left break-normal ${todo.isComplete ? 'line-through' : ''}">
-              {todo.value}
+            <li className="list-none w-2/3 text-left break-normal flex justify-between items-center ${todo.isComplete ? 'line-through' : ''}">
+              <span className="mr-2">{todo.value}</span>
+              <span>{todo.Date}</span>
             </li>
 
             <div className="flex gap-3">
